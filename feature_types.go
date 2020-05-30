@@ -14,8 +14,22 @@ type FeatureTypeService interface {
 
 // Entry is geoserver Entry
 type Entry struct {
-	Key   string `json:"@key,omitempty"`
-	Value string `json:"$,omitempty"`
+	Key          string        `json:"@key,omitempty"`
+	Value        string        `json:"$,omitempty"`
+	VirtualTable *VirtualTable `json:"virtualTable,omitempty"`
+}
+
+type VirtualTable struct {
+	Name      string   `json:"name,omitempty"`
+	SQL       string   `json:"sql,omitempty"`
+	escapeSql bool     `json:"escapeSql,omitempty"`
+	Geometry  Geometry `json:"geometry,omitempty"`
+}
+
+type Geometry struct {
+	Name String `json:"name"`
+	Type String `json:"type"`
+	Srid int    `json:"srid"`
 }
 
 // BoundingBox is geoserver Bounding Box for FeatureType
