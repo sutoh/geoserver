@@ -27,8 +27,8 @@ type VirtualTable struct {
 }
 
 type Geometry struct {
-	Name String `json:"name"`
-	Type String `json:"type"`
+	Name string `json:"name"`
+	Type string `json:"type"`
 	Srid int    `json:"srid"`
 }
 
@@ -42,7 +42,7 @@ type BoundingBox struct {
 
 //Metadata is the geoserver Metadata
 type Metadata struct {
-	Entry []*Entry `json:"entry,omitempty"`
+	Entry *Entry `json:"entry,omitempty"`
 }
 
 //Keywords is the geoserver Keywords
